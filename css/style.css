@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* GENERALS COMPONENTS */
+* {
+    margin : 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+@media screen and (min-width: 850px) {
+    .container {
+        width: 70%;
+        margin: auto;
+    }
+}
+@media screen and (max-width: 850px) {
+    .container {
+        width: calc(100% - 40px);
+        margin: auto;
+    }
+}
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+@media screen and (max-width: 350px) {
+    .flex {
+        justify-content: space-evenly;
+    }
+}
+.hidden {
+    display: none !important;
+}
+
+/* HEADER */
+.header {
+    background-color: #81CBA3;
+    height: 180px;
+    padding-top: 20px;
+}
+.header__wrap {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    text-decoration: none;
+    filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.25));
+    transition-duration: .2s;
+}
+.header__wrap:hover {
+    filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.50));
+}
+.header__logo {
+    display: block;
+    width: 150px;
+    height: 32px;
+    margin: auto;
+}
+
+/* INFOS */
+.infos {
+
+    background-color: #FFFFFF;
+    margin-top: -80px;
+    border-radius: 4px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+}
+.infos__item {
+    padding: 20px;
+}
+.infos__item p {
+    text-align: center;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.infos__item__img {
+    background-color: #FCFCDF;
+    width: 64px;
+    height: 64px;
+    border-radius: 100%;
+    position: relative;
+    margin-bottom: 8px;
+}
+.infos__item__img img {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 12px;
+    left: 12px;
+}
+#hemisphere {
+    text-transform: capitalize;
+}
+
+/* FILTER */
+.filter {
+    margin-top: 32px;
+}
+.filter__item p {
+    opacity: .5;
+    padding-bottom: 2px;
+    font-size: 13px;
+    font-weight: 600;
+    border-bottom: 2px solid #111111;
+    cursor: pointer;
+}
+.filter__item p.filter__current {
+    opacity: 1;
+}
+
+/* LIST-VIEW */
+.list-view {
+    margin-top: 32px;
+}
+.rarity {
+    position: absolute;
+    top: -12px;
+    left: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    color: rgba(0, 0, 0, .6);
+    padding: 2px 8px;
+    border-radius: 8px;
+    background-color: #9BA8C8;
+    text-transform: uppercase;
+}
+.price {
+    position: absolute;
+    top: -12px;
+    right: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #9C6C3E;
+    padding: 2px 8px;
+    border-radius: 8px;
+    background-color: #F7EBC1;
+}
+.list__item {
+    position: relative;
+    width: calc(50% - 10px);
+    background-color: #E8EFFE;
+    border-radius: 4px;
+    margin-bottom: 32px;
+}
+@media screen and (min-width: 1050px) {
+    .list__item {
+        width: 250px;
+    }
+}
+.list__item__img img {
+    display: block;
+    margin: 8px auto 8px auto;
+    width: 80px;
+    height: 80px;
+}
+.list__item__details {
+    text-align: center;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-top: 1px solid rgba(0, 0, 0, .1);
+}
+.name {
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: scroll;
+    background-color: rgba(255, 251, 230, 1);
+}
+.modal__header {
+    padding-top: 20px;
+}
+.hemisphere-choice {
+    background-color: #FEF7DD;
+    border-radius: 4px;
+    padding: 12px 0;
+    margin-top: 20px;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    position: relative;
+}
+@media screen and (min-width: 850px) {
+    .hemisphere-choice {
+        width: 400px;
+        margin: 40px auto;
+    }
+}
+.hemisphere-choice p {
+    padding-top: 4px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 14px;
+}
+.hemisphere-selected {
+    border: 2px solid #111111;
+}
+.hemisphere-selected-icon {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+.hemisphere__img {
+    display: block;
+    width: 200px;
+    height: 200px;
+    margin: auto;
+}
+#toast-modal{
+    visibility: hidden;
+    max-width: 50px;
+    height: 50px;
+    margin: auto;
+    position: fixed;
+    z-index: 1;
+    left: 0;right:0;
+    bottom: 30px;
+    white-space: nowrap;
+    background-color: #00CBBB;
+    color: #ffffff;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 4px;
+}
+#toast-modal .toast__img {
+    width: 50px;
+    height: 50px;
+    float: left;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    box-sizing: border-box;
+    background-color: transparent;
+    color: #ffffff;
+}
+#toast-modal .toast__text {
+    color: #ffffff;
+    padding: 16px;
+    font-weight: 600;
+    overflow: hidden;
+    white-space: nowrap;
+}
+#toast-modal.show{
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, expand 0.5s 0.5s,stay 3s 1s, shrink 0.5s 2s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, expand 0.5s 0.5s,stay 3s 1s, shrink 0.5s 4s, fadeout 0.5s 4.5s;
+}
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+@-webkit-keyframes expand {
+    from {min-width: 50px}
+    to {min-width: 350px}
+}
+@keyframes expand {
+    from {min-width: 50px}
+    to {min-width: 350px}
+}
+@-webkit-keyframes stay {
+    from {min-width: 350px}
+    to {min-width: 350px}
+}
+@keyframes stay {
+    from {min-width: 350px}
+    to {min-width: 350px}
+}
+@-webkit-keyframes shrink {
+    from {min-width: 350px;}
+    to {min-width: 50px;}
+}
+@keyframes shrink {
+    from {min-width: 350px;}
+    to {min-width: 50px;}
+}
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 60px; opacity: 0;}
+}
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 60px; opacity: 0;}
+}
+
+@media screen and (min-width: 850px) {
+    .modal__confirm__btn {
+        width: 400px;
+        margin: 20px auto;
+    }
+}

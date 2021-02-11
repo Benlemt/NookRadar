@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NookRadar</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel = "manifest" href = "manifest.json">
+    <script defer src="js/app.js"></script>
+    <meta name="theme-color" content="#81CBA3">
+    <link rel="icon" sizes="192x192" href="img/icons/192.png" crossorigin="use-credentials">
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="header__wrap" id="open-modal">
+            <img src="img/wrap.png" alt="{change hemisphere}">
+        </a>
+        <img src="img/logo.png" alt="Logo NookRadar" class="header__logo">
+    </header>
+
+    <section class="modal" id="modal">
+        <div class="container">
+            <header class="flex modal__header">
+                <h1>Hémisphère</h1>
+                <a href="#" id="close-modal"><img src="img/icon-close.png" alt="{close modal}"></a>
+            </header>
+            <div class="modal__content">
+                <div class="hemisphere-choice hemisphere-selected" id="hemisphere-north" data-id="N">
+                    <div class="hemisphere-selected-icon" id="hemisphere_n_selected"><img src="img/icon-select.png" alt="{hemisphere selected}"></div>
+                    <div class="hemisphere__img">
+                        <img src="img/north.png" alt="{hemisphere north}">
+                    </div>
+                    <p>Nord</p>
+                </div>
+                <div class="hemisphere-choice" id="hemisphere-south" data-id="S">
+                    <div class="hemisphere-selected-icon hidden" id="hemisphere_s_selected"><img src="img/icon-select.png" alt="{hemisphere selected}"></div>
+                    <div class="hemisphere__img">
+                        <img src="img/south.png" alt="{hemisphere north}">
+                    </div>
+                    <p>Sud</p>
+                </div>
+                <div id="toast-modal">
+                    <div class="toast__img">
+                        <img src="img/tom-nook.png" alt="{tom nook}">
+                    </div>
+                    <div class="toast__text">
+                        L'hémisphère a été mis à jour
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="flex container infos">
+        <div class="infos__item">
+            <div class="infos__item__img">
+                <img src="img/icon-north.png" alt="Winter" id="hemisphere-icon">
+            </div>
+            <p id="hemisphere">Nord</p>
+        </div>
+        <div class="infos__item">
+            <div class="infos__item__img">
+                <img src="img/seasons/0.png" alt="months" id="month-icon">
+            </div>
+            <p id="month">Janvier</p>
+        </div>
+        <div class="infos__item">
+            <div class="infos__item__img">
+                <img src="img/icon-hour.png" alt="Winter">
+            </div>
+            <p id="hour">00:00</p>
+        </div>
+    </section>
+    <section class="flex container filter">
+        <div class="filter__item"><p id="bugs" class="filter__current" data-id="bugs">Insectes</p></div>
+        <div class="filter__item"><p id="fish" data-id="fish">Poissons</p></div>
+        <div class="filter__item"><p id="sea" data-id="sea">Créatures marines</p></div>
+    </section>
+    <section class="flex container list-view">
+
+    </section>
+
+    <script>
+        if (navigator.serviceWorker) {
+            navigator.serviceWorker.register('https://benjamin-lemattre.fr/nookradar/serviceWorker.js').then(function(registration) {
+                console.log('ServiceWorker registration successful with scope:',  registration.scope);
+            }).catch(function(error) {
+                console.log('ServiceWorker registration failed:', error);
+            });
+        }
+    </script>
+</body>
+</html>
